@@ -9,7 +9,7 @@ const login =  async (req, res) => {
     throw Error('sorry worng username or password')
   }
 
-  const id =  new Date().getDate()
+  const id =  new Date().getDate();
 
   const token = jwt.sign({id, username}, process.env.JWT_SECRET, {expireIn: '30d'});
 
