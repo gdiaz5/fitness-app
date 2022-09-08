@@ -10,7 +10,7 @@ const authUser = require('../middleware/auth');
 
 
 // GET
-router.route('/dashboard').get(authUser, dashboard);
+//router.route('/dashboard').get(authUser, dashboard);
 
 
 // POST
