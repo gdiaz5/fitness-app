@@ -1,4 +1,17 @@
+const User = require('../models/User/user.js')
+const Exercise = require('../models/Exercise/exercise')
 const jwt = require('jsonwebtoken');
+
+
+const register = async (req, res) => {
+  const user = await User.create({ ...req.body })
+  res.status(200).send({ msg:'user created' })
+}
+
+const createExercise = async (req, res) => {
+  const newExercise = await Exercise.create(req.body)
+  res.status(200).send({msg: 'exercise added!'})
+}
 
 
 const login =  async (req, res) => {
@@ -22,6 +35,8 @@ const dashboard = async (req, res) => {
 
 
 module.exports = {
+  register,
   login,
+  createExercise,
   dashboard
 }
