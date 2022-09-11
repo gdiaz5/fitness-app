@@ -12,7 +12,16 @@ const userSchema = new mongoose.Schema({
     required: [true, 'Please provide email'],
     maxLength: 50,
     minLength: 3
+  },
+  dateOfBirth: {
+    type: Date,
+    required: [true, 'Please valid date of birth']
   }
+})
+
+userSchema.pre('save',  () => {
+  const date = new Date(this.dateOfBirth)
+  this.dateOfBirth = date;
 })
 
 
