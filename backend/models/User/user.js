@@ -13,6 +13,10 @@ const userSchema = new mongoose.Schema({
     maxLength: 50,
     minLength: 3
   },
+  password: {
+    type: String,
+    required: [true, 'please provide password']
+  },
   dateOfBirth: {
     type: Date,
     required: [true, 'Please valid date of birth']
