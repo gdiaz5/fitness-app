@@ -18,7 +18,7 @@ const login =  async (req, res) => {
   const { username, password } = req.body;
 
   if(!username || !password) {
-    throw Error('sorry worng username or password')
+    throw Error('sorry no username or password')
   }
 
   const id =  new Date().getDate();

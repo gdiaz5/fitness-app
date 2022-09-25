@@ -20,6 +20,17 @@ const userSchema = new mongoose.Schema({
   dateOfBirth: {
     type: Date,
     required: [true, 'Please valid date of birth']
+  },
+  height: {
+    type: Number,
+    require: [true, 'please provide your height']
+  },
+  weight: {
+    type: Number,
+    required: [true, 'please provide your weight']
+  },
+  exercisesLog: {
+    main: []
   }
 })
 
