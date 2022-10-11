@@ -2,8 +2,12 @@ const mongoose = require('mongoose');
 
 
 const Exercise = new mongoose.Schema({
-  name: {
+  workload: {
     type: String
+  },
+  createdOn: {
+    type: Date,
+    default: Date.now()
   }
 })
 

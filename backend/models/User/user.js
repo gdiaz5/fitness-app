@@ -1,4 +1,6 @@
 const mongoose = require('mongoose')
+const Exercise = require('../Exercise/exercise')
+
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -29,9 +31,7 @@ const userSchema = new mongoose.Schema({
     type: Number,
     required: [true, 'please provide your weight']
   },
-  exercisesLog: {
-    main: []
-  }
+  exercisesLog: [Exercise.schema]
 })
 
 userSchema.pre('save',  () => {
