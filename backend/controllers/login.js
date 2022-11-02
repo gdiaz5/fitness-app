@@ -7,19 +7,14 @@ const register = async (req, res) => {
   const user = await User.create({ ...req.body })
   res.status(200).send({ msg:'user created' })
 }
-
+// Work on this further
 const createExercise = async (req, res) => {
-  const { id, workload } = req.body
-
-  const user = await User.findById(id)
-
-  const newExercise = new Exercise({workload})
-
-  user.exercisesLog.push(newExercise)
-
-  await user.save()
-
-  res.status(200).send({msg: 'exercise added!'})
+  // console.log(req)
+  // req.body.id = req.user.userId
+  // const exercise = await Exercise.create(req.body);
+  //res.status(200).send({msg: 'Exercise added!'})
+  console.log(req.user)
+  res.send(req.user)
 }
 
 
