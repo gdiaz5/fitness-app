@@ -2,13 +2,14 @@ const mongoose = require('mongoose');
 
 
 const Exercise = new mongoose.Schema({
-  id: {
+  createdBy: {
     type: mongoose.Types.ObjectId,
     ref: 'User',
     required: [true, 'please provide user']
   },
   workload: {
-    type: String
+    type: Array,
+    required: true
   },
   createdOn: {
     type: Date,

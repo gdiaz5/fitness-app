@@ -1,5 +1,6 @@
 const User = require('../models/User/user.js')
 const Exercise = require('../models/Exercise/exercise')
+const workoutCard = require('../models/Exercise/workoutCard')
 const jwt = require('jsonwebtoken');
 
 
@@ -9,12 +10,8 @@ const register = async (req, res) => {
 }
 // Work on this further
 const createExercise = async (req, res) => {
-  // console.log(req)
-  // req.body.id = req.user.userId
-  // const exercise = await Exercise.create(req.body);
-  //res.status(200).send({msg: 'Exercise added!'})
-  console.log(req.user)
-  res.send(req.user)
+  const exercise = await Exercise.create(req.body);
+  res.status(200).send({msg: 'Exercise added!'})
 }
 
 
