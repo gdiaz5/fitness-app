@@ -9,12 +9,17 @@ const connectDB = require('./db/connect')
 
 const port = 5000;
 
+
+// Middleware
+const authEx = require('./middleware/auth')
+
 //Routes
 const loginRoute = require('./routes/login')
+const exerciseRoute = require('./routes/exercise')
 
 app.use(express.json())
 app.use('/', loginRoute)
-
+app.use('/exercise', authEx, exerciseRoute)
 
 const start = async () => {
   try {

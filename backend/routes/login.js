@@ -3,21 +3,11 @@ const router = express.Router()
 
 
 // Controllers
-const {register, createExercise, login, dashboard} = require('../controllers/login');
-
-// Middleware
-const authUser = require('../middleware/auth');
-
-
+const {register,  login, dashboard} = require('../controllers/login');
 // GET
-//router.route('/dashboard').get(authUser, dashboard);
-
 
 // POST
 router.route('/register').post(register)
-
-router.route('/add').post(createExercise)
-
 router.route('/login').post(login);
 
 
