@@ -9,13 +9,19 @@ const createExercise = async (req, res) => {
   const exercise = await Exercise.create(req.body);
   console.log(exercise.createdBy)
   res.status(200).json({ exercise })
- // res.json(req.user)
+}
+
+// Retreives all user data when authentication is verified
+const dashboard =  async (req, res) => {
+  const id = req.body.id
+  const exerciseUserData = await Exercise.find({createdBy: id})
+  res.status(200).json({exerciseUserData})
 }
 
 
 
 
-
-
-
-module.exports =  createExercise
+module.exports =  {
+  createExercise,
+  dashboard
+}
