@@ -13,8 +13,7 @@ const createExercise = async (req, res) => {
 
 // Retreives all user data when authentication is verified
 const dashboard =  async (req, res) => {
-  const id = req.body.id
-  const exerciseUserData = await Exercise.find({createdBy: id})
+  const exerciseUserData = await Exercise.find({createdBy: req.user.userId})
   res.status(200).json({exerciseUserData})
 }
 
