@@ -2,30 +2,20 @@ import React from 'react'
 import '../styles/_header.scss'
 import axios from '../axios'
 import {useState} from 'react'
+import Login from './Login'
+import logo from '../assests/wole-removebg-preview.png'
 
 function Header() {
 
 
-const [user, setUser] = useState([])
-
-
-const getTest = async () => {
-
-    await axios.post('/login', {
-      email: "monkeybaldsdscls1234@gmail.com",
-      password: "skmbchc123"
-    }).then((res) => {
-      setUser(res.data)
-    }).catch((err) => {
-      console.log(err)
-    })
-
-    console.log(user)
-}
 
 
 
-// getTest()
+
+
+
+
+
 
 
 
@@ -33,7 +23,7 @@ const getTest = async () => {
   return (
     <div className='header'>
       <div className='header__logo'>
-        <img src='./assests/gdz.png' alt=''></img>
+        <img src={logo} alt=''></img>
       </div>
       <div className='header__menu'>
         <a href='./'>Home</a>
@@ -41,11 +31,7 @@ const getTest = async () => {
         <a href='./'>About Us</a>
         <a href='./'>Register</a>
       </div>
-      <div className='header__loginbtn'>
-        <button onClick={getTest}>
-          Sign In
-        </button>
-      </div>
+      <Login />
     </div>
   )
 }
