@@ -2,20 +2,22 @@
 
 
 .login {
+
+
   button {
     display: inline-block;
     padding: 0.875rem 2.1875rem;
-    background: $mainOrange;
+    background: $btnBlue;
     border: 0;
     border-radius: 50px;
     cursor: pointer;
     color: $headerFontColor;
-    font-weight: 400;
-    //font-size: $font-sm;
+    font-weight: 800;
     transition: opacity 300ms ease-in-out;
-
+    font-size: 18px;
     &:hover {
       opacity: 0.75;
     }
    }
 }
+

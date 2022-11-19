@@ -2,33 +2,51 @@
 
 
 .header {
-  margin: 0, 1em, 0, 1em;
+  margin: 0;
   width: 100%;
-  height: 5.5em;
-  background-color: aliceblue;
+  background-color: $mainBlue;
   color: rgb(6, 20, 131);
   font-family: 'Roboto', sans-serif;
   font-size: 17px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
+  height: 90vh;
 
 
   &__logo {
+    display: flex;
+    align-items:center;
+    margin-bottom: 8em;
+    h1 {
+      letter-spacing: 0.1em;
+      margin: 0;
+    }
     img {
-      width: 300px;
-      height: min-content;
+      width: 150px;
+      height: 80px;
+      object-fit: cover;
     }
   }
 
-  &__menu {
-    a, a:visited, a:hover {
-      color: rgb(6, 20, 131);
-      margin-right: 1em;
-      text-decoration: none;
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2em 0 2em;
+
+    &__copy {
+      img {
+        display: none;
+      }
+      @media (min-width: 1000px) {
+        img {
+          display: inline;
+        }
+        width: 50%;
+      }
     }
+
+    p {
+      line-height: 2em;
+    }
+
   }
-
-
 }

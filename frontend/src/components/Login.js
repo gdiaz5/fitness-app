@@ -32,12 +32,9 @@ const loginUser = async (event) => {
 
   return (
     <div className='login'>
-        <button>
-          Sign In
-        </button>
-        <button>
-          Sign In
-        </button>
+      <button>
+        Login / Register
+      </button>
     </div>
   )
 }
