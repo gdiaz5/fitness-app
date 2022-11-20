@@ -35,13 +35,17 @@ function Header() {
         <div className='header__info__copy'>
           <h1>Weightlifting Tracking App</h1>
           <p>Crucifix narwhal street art asymmetrical, humblebrag tote bag pop-up fixie raclette taxidermy craft beer. Brunch bitters synth, VHS crucifix heirloom meggings bicycle rights.</p>
-          <Login />
+          <div className='login'>
+            <button>
+              Login / Register
+            </button>
+          </div>
         </div>
         <div className='hero__img'>
           <img src={hero} alt=''></img>
         </div>
       </div>
-
+      <Login />
     </div>
   )
 }

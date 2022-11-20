@@ -8,7 +8,7 @@
   color: rgb(6, 20, 131);
   font-family: 'Roboto', sans-serif;
   font-size: 17px;
-  height: 90vh;
+  height: max-content;
 
 
   &__logo {
@@ -31,15 +31,15 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 2em 0 2em;
+    img {
+      display: none;
+    }
+    @media (min-width: 1000px) {
+      img {
+        display: inline;
+      }
 
     &__copy {
-      img {
-        display: none;
-      }
-      @media (min-width: 1000px) {
-        img {
-          display: inline;
-        }
         width: 50%;
       }
     }
