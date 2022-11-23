@@ -33,9 +33,9 @@ function Header() {
       </div>
       <div className='header__info'>
         <div className='header__info__copy'>
-          <h1>Weightlifting Tracking App</h1>
-          <p>Crucifix narwhal street art asymmetrical, humblebrag tote bag pop-up fixie raclette taxidermy craft beer. Brunch bitters synth, VHS crucifix heirloom meggings bicycle rights.</p>
-          <div className='login'>
+          <h1>The last gym partner you'll ever have</h1>
+          <p>Everything you need to meet your fitness goals. All in one app</p>
+          <div>
             <button>
               Login / Register
             </button>

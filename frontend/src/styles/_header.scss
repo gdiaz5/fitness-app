@@ -11,6 +11,24 @@
   height: max-content;
 
 
+
+  button {
+    display: inline-block;
+    padding: 0.875rem 2.1875rem;
+    background: $btnBlue;
+    border: 0;
+    border-radius: 50px;
+    cursor: pointer;
+    color: $headerFontColor;
+    font-weight: 800;
+    transition: opacity 300ms ease-in-out;
+    font-size: 18px;
+    margin-bottom: 1em;
+    &:hover {
+      opacity: 0.75;
+    }
+   }
+
   &__logo {
     display: flex;
     align-items:center;
@@ -31,6 +49,11 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 2em 0 2em;
+    text-align: center;
+
+    h1 {
+      font-size: 55px;
+    }
     img {
       display: none;
     }
@@ -40,13 +63,15 @@
       }
 
     &__copy {
-        width: 50%;
+      width: 50%;
       }
     }
 
     p {
+      font-weight: 600;
       line-height: 2em;
     }
 
   }
+
 }

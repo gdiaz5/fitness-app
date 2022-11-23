@@ -2,24 +2,20 @@
 
 
 .login {
-
-  margin: 0 2em 0 2em;
+  text-align: center;
+  margin: 10em 2em 0 2em;
   line-height: 2;
 
-  button {
-    display: inline-block;
-    padding: 0.875rem 2.1875rem;
-    background: $btnBlue;
-    border: 0;
-    border-radius: 50px;
-    cursor: pointer;
-    color: $headerFontColor;
-    font-weight: 800;
-    transition: opacity 300ms ease-in-out;
-    font-size: 18px;
-    &:hover {
-      opacity: 0.75;
-    }
-   }
+
+
+  @media (min-width: 1000px) {
+    display: flex;
+  }
+
 }
 
+
+.offer {
+  margin-bottom: 3em;
+  text-align: center;
+}
