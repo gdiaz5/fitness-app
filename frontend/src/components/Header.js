@@ -4,8 +4,10 @@ import axios from '../axios'
 import {useState} from 'react'
 import Login from './Login'
 import About from './About';
+import Footer from './Footer';
 import logo from '../assests/SB-removebg-preview.png'
 import hero from '../assests/Untitled_design-removebg-preview.png'
+
 
 
 function Header() {
@@ -49,6 +51,7 @@ function Header() {
       </div>
       <Login />
       <About />
+      <Footer />
     </div>
   )
 }

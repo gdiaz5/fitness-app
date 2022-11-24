@@ -1,0 +1,15 @@
+@import './style';
+
+
+.about {
+  text-align: center;
+  margin: 5em 2em 0 2em;
+
+  &-info {
+    p {
+      word-break: break-all;
+      font-size: 19px;
+      line-height: 2em;
+    }
+  }
+}
