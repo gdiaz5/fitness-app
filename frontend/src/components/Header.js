@@ -3,8 +3,10 @@ import '../styles/_header.scss'
 import axios from '../axios'
 import {useState} from 'react'
 import Login from './Login'
+import About from './About';
 import logo from '../assests/SB-removebg-preview.png'
 import hero from '../assests/Untitled_design-removebg-preview.png'
+
 
 function Header() {
 
@@ -46,6 +48,7 @@ function Header() {
         </div>
       </div>
       <Login />
+      <About />
     </div>
   )
 }

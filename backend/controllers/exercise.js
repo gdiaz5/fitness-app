@@ -3,7 +3,7 @@ const workoutCard = require('../models/Exercise/workoutCard')
 
 
 
-// Adds new workout
+// Adds new workout protected route
 const createExercise = async (req, res) => {
   req.body.createdBy = req.user.userId
   const exercise = await Exercise.create(req.body);
