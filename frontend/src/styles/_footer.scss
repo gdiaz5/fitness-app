@@ -1,0 +1,29 @@
+@import './style';
+
+.footer {
+  padding: 1.5em;
+  background-color: $footerBlue;
+  text-align: center;
+  color: $mainBlue;
+
+  a {
+    color: $mainBlue;
+    padding-right: 0.75em;
+    text-decoration: none;
+  }
+
+  h2 {
+    margin: 0 0 0.5em 0;
+  }
+
+  &_social {
+    padding: 0.5em 0 0.5em 0;
+  }
+
+  &_link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
