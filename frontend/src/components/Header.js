@@ -1,7 +1,6 @@
 import React from 'react'
 import '../styles/_header.scss'
-import axios from '../axios'
-import {useState} from 'react'
+import { Link } from 'react-router-dom';
 import Login from './Login'
 import About from './About';
 import Footer from './Footer';
@@ -11,20 +10,6 @@ import hero from '../assests/Untitled_design-removebg-preview.png'
 
 
 function Header() {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   return (
     <div className='header'>
       <div className='header__logo'>
@@ -40,9 +25,11 @@ function Header() {
           <h1>The last gym partner you'll ever have</h1>
           <p>Everything you need to meet your fitness goals. All in one app</p>
           <div>
-            <button>
-              Login / Register
-            </button>
+            <Link to='/register'>
+              <button>
+                Login / Register
+              </button>
+            </Link>
           </div>
         </div>
         <div className='hero__img'>
