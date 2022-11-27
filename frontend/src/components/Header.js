@@ -26,7 +26,7 @@ function Header() {
           <p>Everything you need to meet your fitness goals. All in one app</p>
           <div>
             <Link to='/register'>
-              <button>
+              <button className='btn'>
                 Login / Register
               </button>
             </Link>
