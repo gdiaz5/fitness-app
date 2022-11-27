@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/_register.scss'
 import logo from '../assests/SB-removebg-preview.png'
 import { useState } from 'react'
+import axios from '../axios'
 
 function Register() {
 
@@ -9,9 +10,13 @@ function Register() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(email, password)
+    const signIn = await axios.post('/login', {
+      email: email,
+      password: password
+    })
+    console.log(signIn.data)
     setEmail('')
     setPassword('')
   }

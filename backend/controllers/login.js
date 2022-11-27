@@ -21,7 +21,6 @@ const login =  async (req, res) => {
   const isPasswordCorrect = await user.comparePassword(password)
   const token = user.createJWT()
   res.status(200).json({ user: {name: user.name}, token })
-
 }
 
 const dashboard = async (req, res) => {
