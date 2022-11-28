@@ -23,6 +23,8 @@ const login =  async (req, res) => {
   res.status(200).json({ user: {name: user.name}, token })
 }
 
+
+// Request all user information
 const dashboard = async (req, res) => {
   const userInfo = 'information!'
   res.status(200).json({msg: 'sup'})
