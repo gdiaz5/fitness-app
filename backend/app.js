@@ -23,6 +23,7 @@ app.use(cors())
 app.use('/', loginRoute)
 app.use('/exercise', authEx, exerciseRoute)
 
+
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI)

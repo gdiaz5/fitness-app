@@ -30,19 +30,29 @@ function Register() {
       <form onSubmit={handleSubmit}>
         <h1>Swole Buddy</h1>
         <div>
-          <label>
-            <input type='text' value={email} placeholder='Email'
-            onChange={(e) => setEmail(e.target.value)} />
-          </label>
+          <label>Email</label>
+            <input
+              type='text'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              />
         </div>
         <div>
-          <label>
-            <input type='password' value={password} placeholder='Password'
-            onChange={(e) => setPassword(e.target.value)}/>
-          </label>
+          <label>Password</label>
+            <input
+            type='password'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            />
+
         </div>
          <input className='btn' type='submit' value='Login'/>
       </form>
+      <div>
+        <p>
+          Not a member yet? <a href='/'>Register Here</a>
+        </p>
+      </div>
       </div>
     </div>
   )

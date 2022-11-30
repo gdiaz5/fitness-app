@@ -19,11 +19,21 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 5em;
+    width: 35em;
+    //padding: 5em;
     border-radius: 0.5em;
     background-color: rgb(255, 253, 253);
-    height: 500px;
+    height: 40em;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+    label {
+      text-align: left;
+      display: block;
+      padding-bottom: 0.8em;
+      font-weight: 600;
+      font-size: 20px;
+    }
     img {
       width: 150px;
       height: 80px;
@@ -31,7 +41,9 @@
     }
     div {
       padding-bottom: 2em;
+      width: max-content;
       input {
+        width: 100%;
         padding: 0.7em;
         border-radius: 0.3em;
       }
