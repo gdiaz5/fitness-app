@@ -43,7 +43,7 @@ const updateUser = async (req, res) => {
     user: {
       name: user.name,
       email: user.email,
-      password: user.password;,
+      password: user.password,
       token
     }
   })

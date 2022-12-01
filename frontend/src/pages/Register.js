@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/_register.scss'
 import logo from '../assests/SB-removebg-preview.png'
 import { useState } from 'react'
-import axios from '../axios'
+import axios from '../utils/axios'
 
 function Register() {
 
@@ -16,7 +16,9 @@ function Register() {
       email: email,
       password: password
     })
+    localStorage.setItem('user', signIn.data.user.name)
     console.log(signIn.data)
+    console.log(window.localStorage)
     setEmail('')
     setPassword('')
   }
@@ -48,9 +50,9 @@ function Register() {
         </div>
          <input className='btn' type='submit' value='Login'/>
       </form>
-      <div>
+      <div className='register_link'>
         <p>
-          Not a member yet? <a href='/'>Register Here</a>
+          Not a member yet? <a href='/'><span>Register Here</span></a>
         </p>
       </div>
       </div>
