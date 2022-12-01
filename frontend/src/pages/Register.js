@@ -3,6 +3,7 @@ import '../styles/_register.scss'
 import logo from '../assests/SB-removebg-preview.png'
 import { useState } from 'react'
 import axios from '../utils/axios'
+import { Link } from 'react-router-dom'
 
 function Register() {
 
@@ -48,7 +49,9 @@ function Register() {
             />
 
         </div>
-         <input className='btn' type='submit' value='Login'/>
+        <Link to='/dashboard'>
+          <input className='btn' type='submit' value='Login'/>
+        </Link>
       </form>
       <div className='register_link'>
         <p>
