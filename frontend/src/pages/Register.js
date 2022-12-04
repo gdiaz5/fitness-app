@@ -3,11 +3,10 @@ import '../styles/_register.scss'
 import logo from '../assests/SB-removebg-preview.png'
 import { useState } from 'react'
 import axios from '../utils/axios'
-import { Link } from 'react-router-dom'
+import  { useNavigate }  from 'react-router-dom'
 
 function Register() {
-
-  // State
+  const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -17,11 +16,12 @@ function Register() {
       email: email,
       password: password
     })
-    localStorage.setItem('user', signIn.data.user.name)
     console.log(signIn.data)
+    localStorage.setItem('user', JSON.stringify(signIn.data));
     console.log(window.localStorage)
     setEmail('')
     setPassword('')
+    navigate('/dashboard')
   }
 
 
@@ -49,9 +49,9 @@ function Register() {
             />
 
         </div>
-        <Link to='/dashboard'>
+        {/* <Link to='/dashboard'> */}
           <input className='btn' type='submit' value='Login'/>
-        </Link>
+        {/* </Link> */}
       </form>
       <div className='register_link'>
         <p>
