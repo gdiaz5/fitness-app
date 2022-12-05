@@ -14,7 +14,7 @@ const createExercise = async (req, res) => {
 
 // Retreives all user data when authentication is verified
 const dashboard =  async (req, res) => {
-  const exerciseUserData = await Exercise.find({createdBy: req.user.userId})
+  const exerciseUserData = await Exercise.find({createdBy: req.user.userId}, 'workload').exec()
   res.status(200).json({exerciseUserData})
 }
 

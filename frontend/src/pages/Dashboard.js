@@ -13,7 +13,6 @@ function Dashboard() {
   useEffect( () => {
     const fetchDashboard = async () => {
       const isUser = JSON.parse(localStorage.getItem('user'));
-      console.log(isUser.token)
       const userInfo = await axios('/exercise/dashboard', {
         headers: {
           Authorization: `Bearer ${isUser.token}`
@@ -29,7 +28,13 @@ function Dashboard() {
 
   return (
     <div>
-      {(authorizedUser) ? (<h2> welcome{JSON.stringify(dashboard.data)}</h2>) : (
+      {(authorizedUser) ?
+      ( <div>
+          <h2> welcome{JSON.stringify(dashboard.data)}</h2>
+          <div>
+
+          </div>
+        </div>) : (
         <Navigate to='/register' />
       )}
     </div>
