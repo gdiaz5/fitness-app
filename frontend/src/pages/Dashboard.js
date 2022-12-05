@@ -6,6 +6,8 @@ import { Navigate } from 'react-router-dom';
 function Dashboard() {
 
   const [authorizedUser, setauthorizedUser] = useState({});
+  const [name, setName] = useState('')
+  const [trainingHistory, setTrainingHistory] = useState()
   // This will change. Storing token in local storage for now. Will secure later
   const [token, setToken] = useState('')
   const [dashboard, setDashboard] = useState({})
@@ -18,6 +20,8 @@ function Dashboard() {
           Authorization: `Bearer ${isUser.token}`
         }
       })
+      setName(userInfo.data.name)
+      setTrainingHistory(userInfo.data['payload'])
       setDashboard( dashboard  => ({
         ...userInfo
       }))
@@ -30,7 +34,7 @@ function Dashboard() {
     <div>
       {(authorizedUser) ?
       ( <div>
-          <h2> welcome{JSON.stringify(dashboard.data)}</h2>
+          <h2>{`${name}'s Dashboard`}</h2>
           <div>
 
           </div>
