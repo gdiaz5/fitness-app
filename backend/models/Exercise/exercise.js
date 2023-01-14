@@ -1,20 +1,28 @@
-const mongoose = require('mongoose');
-
+const mongoose = require("mongoose");
 
 const Exercise = new mongoose.Schema({
   createdBy: {
     type: mongoose.Types.ObjectId,
-    ref: 'User',
-    required: [true, 'please provide user']
+    ref: "User",
+    required: [true, "please provide user"],
   },
   workload: {
     type: Array,
-    required: true
+    required: true,
   },
   createdOn: {
     type: Date,
-    default: Date.now()
-  }
-})
+    default: Date.now(),
+  },
+});
 
-module.exports = mongoose.model('Exercise', Exercise)
+Exercise.pre("save", async function () {
+  this.createdOn = this.createdOn.toLocaleDateString("en-us", {
+    weekday: "long",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+});
+
+module.exports = mongoose.model("Exercise", Exercise);

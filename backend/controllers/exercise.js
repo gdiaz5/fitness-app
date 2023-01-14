@@ -1,38 +1,37 @@
-const Exercise = require('../models/Exercise/exercise')
-const User = require('../models/User/user')
-
+const Exercise = require("../models/Exercise/exercise");
+const User = require("../models/User/user");
 
 // Token is created for every auth controller
 
 // Adds new workout protected route
 const createExercise = async (req, res) => {
-  req.body.createdBy = req.user.userId
+  req.body.createdBy = req.user.userId;
   const exercise = await Exercise.create(req.body);
-  console.log(exercise.createdBy)
-  res.status(200).json({ exercise })
-}
+  console.log(exercise.createdBy);
+  res.status(200).json({ exercise });
+};
 
 // Retreives all user data when authentication is verified
-const dashboard =  async (req, res) => {
-  const exerciseUserData = await Exercise.find({createdBy: req.user.userId}, 'workload').exec()
+const dashboard = async (req, res) => {
+  const exerciseUserData = await Exercise.find(
+    { createdBy: req.user.userId },
+    "workload createdOn"
+  ).exec();
   res.status(200).json({
     name: req.user.name,
-    payload: exerciseUserData
-  })
-}
-
-
-
+    payload: exerciseUserData,
+  });
+};
 
 // Update user information
 const updateUser = async (req, res) => {
-  const { name, email, password  } = req.body;
+  const { name, email, password } = req.body;
 
   if (!name || !email || !password) {
-    throw Error('Please provide all fields');
+    throw Error("Please provide all fields");
   }
 
-  const user = await User.findOne({ _id: req.user.userId })
+  const user = await User.findOne({ _id: req.user.userId });
 
   user.name = name;
   user.email = email;
@@ -47,16 +46,12 @@ const updateUser = async (req, res) => {
       name: user.name,
       email: user.email,
       password: user.password,
-      token
-    }
-  })
+      token,
+    },
+  });
+};
 
-}
-
-
-
-
-module.exports =  {
+module.exports = {
   createExercise,
-  dashboard
-}
+  dashboard,
+};
