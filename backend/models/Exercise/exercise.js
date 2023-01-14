@@ -16,13 +16,4 @@ const Exercise = new mongoose.Schema({
   },
 });
 
-Exercise.pre("save", async function () {
-  this.createdOn = this.createdOn.toLocaleDateString("en-us", {
-    weekday: "long",
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-});
-
 module.exports = mongoose.model("Exercise", Exercise);

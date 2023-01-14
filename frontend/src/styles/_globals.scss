@@ -1,5 +1,4 @@
-@import './variables.scss';
-
+@import "./variables.scss";
 
 .btn {
   display: inline-block;
@@ -16,15 +15,18 @@
   &:hover {
     opacity: 0.75;
   }
- }
+}
 
-
- a {
+a {
   color: $btnBlue;
   text-decoration: none;
   font-weight: 500;
- }
+}
 
- h1 h2 h3 {
+h1 h2 h3 h4 {
   margin: 0;
- }
+}
+
+.space {
+  margin: 0 1em 0 1em;
+}

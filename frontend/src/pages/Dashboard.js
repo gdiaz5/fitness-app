@@ -4,13 +4,15 @@ import "../styles/_dashboard.scss";
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import TrainingCard from "../components/TrainingCard";
+import HeaderDash from "../components/HeaderDash";
+import MainCard from "../components/MainCard";
 
 function Dashboard() {
   const [isLoading, setLoading] = useState(true);
   const [name, setName] = useState("");
   const [trainingHistory, setTrainingHistory] = useState();
-  // This will change. Storing token in local storage for now. Will secure later
 
+  // This will change. Storing token in local storage for now. Will secure later
   useEffect(() => {
     const fetchDashboard = async () => {
       const isUser = JSON.parse(localStorage.getItem("user"));
@@ -26,20 +28,18 @@ function Dashboard() {
     fetchDashboard();
   }, []);
 
-  // const remove = () => {
-  //   localStorage.clear()
-  //   setauthorizedUser(false)
-  // }
-
   return (
     <div className="dashboard">
       {isLoading ? (
         <h2>Loading...</h2>
       ) : (
         <div>
-          <h2>{`${name}'s Dashboard`}</h2>
+          <HeaderDash />
+          <div>
+            <h2>{name.split(" ")[0]}'s Dashboard</h2>
+          </div>
+          <MainCard />
           <TrainingCard workload={trainingHistory} />
-          <button>Log out</button>
         </div>
       )}
     </div>

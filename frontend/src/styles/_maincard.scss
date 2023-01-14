@@ -1,0 +1,29 @@
+@import "./style";
+
+.maincard {
+  height: 8em;
+  background-color: rgb(233, 244, 246);
+  margin-top: 1em;
+  padding: 0 0.5em 0 0.5em;
+  border-radius: 5px;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    height: 5.5em;
+    padding-top: 0.5em;
+    p {
+      font-weight: 500;
+      margin: 0;
+    }
+  }
+  &-addbtn {
+    span {
+      border-radius: 5px;
+      padding: 5px;
+      color: rgb(239, 242, 245);
+      background-color: rgba(52, 194, 92, 0.781);
+    }
+    width: 100%;
+  }
+}
