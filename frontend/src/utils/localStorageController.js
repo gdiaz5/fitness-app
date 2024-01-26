@@ -1,8 +1,5 @@
 const clearLocalStorage = () => {
-  localStorage.clear()
-}
+  localStorage.clear();
+};
 
-
-
-
-export default clearLocalStorage
+export default clearLocalStorage;

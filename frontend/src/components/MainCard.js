@@ -1,24 +1,20 @@
 import React from "react";
 import "../styles/_maincard.scss";
+import shortDate from "../utils/date";
 
 function MainCard() {
-  function currentDate() {
-    let date = new Date();
-    return date.toLocaleDateString("en-US", {
-      weekday: "short",
-      month: "numeric",
-      day: "numeric",
-    });
-  }
+  const date = new Date();
 
   return (
     <div className="maincard space">
       <div className="maincard-header">
         <p>Welcome back!</p>
-        <div>{currentDate()}</div>
+        <div>{shortDate()}</div>
       </div>
       <div className="maincard-addbtn">
-        <span>start new workout +</span>
+        <a href="#">
+          <span>start new workout +</span>
+        </a>
       </div>
     </div>
   );

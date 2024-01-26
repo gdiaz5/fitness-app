@@ -1,0 +1,28 @@
+@import "./style.scss";
+
+.history {
+  background-color: rgb(187, 207, 227);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 5px;
+  &-record {
+    padding: 0.8em;
+    &-workout {
+      color: rgb(39, 36, 36);
+      a {
+        text-decoration: none;
+      }
+      display: flex;
+      justify-content: space-between;
+      border-radius: 1em;
+      margin: 0.5em 0 0.5em 0;
+      background-color: rgb(243, 247, 247);
+      p {
+        padding: 0 10px 0 10px;
+      }
+    }
+  }
+  &-card {
+    background-color: antiquewhite;
+    width: 200px;
+  }
+}
